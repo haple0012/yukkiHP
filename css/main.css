@@ -3,10 +3,31 @@ html, body{
     padding: 0;
 }
 
-#main{
+.background {
+    background-color: #ffb6c1;
+    opacity: 0.5;
+    filter: blur(8px);
+}
+
+.main{
+    text-align: center;
     width: 100%;
     height: auto;
-    background-color: #ffb6c1;
+    background-image: url('./../src/back.jpeg');
+    position: relative;
+    z-index: 0;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
 }
 
 #titleStyle {
@@ -23,13 +44,31 @@ html, body{
 
 #title{
     font-size:30px;
+  position: relative;
+  padding: .5em .75em;
+  background-color: #E8E810;
+}
+#title::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #E8E8DA;
+}
+
+.titleContainer img{
+    max-width: 80%;
+    height: auto;
 }
 
 #mainContents{
     margin: 50px auto;
-    width: 90%;
+    width: 100%;
     height: auto;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -66,13 +105,11 @@ html, body{
 
 .wrapperGrid {
     display: grid;
-    grid-template-rows: 680px 200px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 #calendar {
     text-align: center;
-    grid-row: 1/2;
     grid-column: 1/6;
 }
 
@@ -86,7 +123,6 @@ html, body{
     text-align: center;
     width: 320px; 
     height: 600px;
-    grid-row: 1/2;
     grid-column: 6/8;
 }
 #twitter-widget-0{
@@ -102,19 +138,21 @@ html, body{
     align-items: center;
     justify-content: center;
 }
+
 .snsBtn img{
-    border-radius: 30px;
-    height: 60px;
-    width: 60px;
+    margin-top: 10px;
+    float: left;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
 }
+
 .SNScard {
     margin: 0 auto;
     width: 100%;
     height: 55%;
     border-radius: 15px;
     margin: 5px auto 30px auto;
-    background-color: #ffb6c1;
-    border: solid 1px;
 }
 
 .SNScard a{
@@ -124,36 +162,11 @@ html, body{
     direction: none;
 }
 
-
-#twitterCard {
-    border-color: #00acee;
-}
-
-#showroomCard {
-    color: #000000;
-    border-left:1px solid #ff0000;
-    border-right:1px solid #0000ff;
-}
-
 #showroomCard:before,
 #showroomCard:after {
 content:"";
 display:block;
 width:100%;
-	background:-webkit-gradient(linear, left top, right bottom, from(#f00), to(#00f));
-	background:-moz-linear-gradient(left, #f00, #00f);
-	background:linear-gradient(left, #f00, #00f);
-}
-
-#voicyCard {
-    border-color: #f47224;
-}
-
-.snsBtn img{
-    margin-left: 10px;
-    border-radius: 30px;
-    height: 60px;
-    width: 60px;
 }
 
 .SNSText {       
@@ -165,28 +178,43 @@ width:100%;
     vertical-align: middle;
 }
 
+.iconContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#lineCard {
+    width: 100%;
+    height: 100px;
+    grid-column: 1/2;
+}
 #twitterCard {
-    grid-row: 2/3;
+    width: 100%;
+    height: 100px;
     grid-column: 2/3;
 }
-
 #showroomCard {
-    grid-row: 2/3;
+    width: 100%;
+    height: 100px;
+    grid-column: 3/4;
+}
+#voicyCard {
+    width: 100%;
+    height: 100px;
     grid-column: 4/5;
 }
-
-#voicyCard {
-    grid-row: 2/3;
-    grid-column: 6/7;
+#amazonCard {
+    width: 100%;
+    height: 100px;
+    grid-column: 5/6;
 }
-
-#modal-content{
+#modal-content,#modal-content2{
 	width:50%;
 	margin:1.5em auto 0;
 	padding:10px 20px;
 	border:2px solid #aaa;
-	background:#fff;
-	z-index:2;
+	background:#ffdbff;
+	z-index: 3;
 }
 
 .subtitle {
@@ -205,7 +233,7 @@ width:100%;
     padding: 0 5%;
 }
 
-.modal-p{
+.modal-p, .modal-p2{
 	margin-top:1em;
 }
 
@@ -230,21 +258,31 @@ width: 100% ;
 padding: 0 ;
 }
 /* ここまでデモページ用のコード */
-#modal-content {
-width: 50% ;
-margin: 0 ;
-padding: 10px 20px ;
-border: 2px solid #aaa ;
-background: #fff ;
-position: fixed ;
-display: none ;
-z-index: 2 ;
+#modal-content{
+    width: 50% ;
+    margin: 0 ;
+    padding: 10px 20px ;
+    border: 2px solid #aaa ;
+    background: #ffdbff;
+    position: fixed ;
+    display: none ;
+    z-index: 3 ;
 }
-#modal-content-innar{
+#modal-content2{
+    width: 70% ;
+    margin: 0 ;
+    padding: 10px 20px ;
+    border: 2px solid #aaa ;
+    background: #ffdbff;
+    position: fixed ;
+    display: none ;
+    z-index: 3 ;
+    }
+#modal-content-innar, #modal-content-innar2{
 margin:0 auto;
 width:80%;
 }
-#modal-overlay {
+#modal-overlay, #modal-overlay2 {
 z-index: 1 ;
 display: none ;
 position: fixed ;
@@ -263,21 +301,22 @@ cursor: pointer ;
 color: #f00 ;
 }
 .red{
+    text-align: center;
     color:red;
     font-weight:bold;
     font-size:120%;
     } #side-profile dl {
     margin-bottom: 10px;
 }
-#modal-close{
+#modal-close, #modal-close2{
     margin: 0 auto;
-    margin-top: 5px; 
+    margin-top: 15px; 
     width: 30px;
     height: 30px;
     text-align: center;
     align-items: center;
 }
-#closeIcon {
+#closeIcon,  #closeIcon2{
     width: 25px;
     height: 25px;
   }
@@ -292,21 +331,44 @@ color: #f00 ;
     text-align: center;
 }
 
+.profile {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.profile td{
+    width: 30%;
+    border-right: double 7px #4ec4d3;
+    padding: 10px;
+}
+
+.profile th{
+    width: 70%;
+    padding: 10px;
+}
+
+.tableContainer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.phonetic {
+    font-size: 10px;
+}
+
 /*スマホ画面の設定↓*/
 @media screen and (max-width: 750px){
     html, body{
         margin: 0;
         padding: 0;
     }
-    #main{
+    .main{
         width: 100%;
         height: auto;
-        background-color: #ffb6c1;
     }
     #mainContents{
-        margin: 15px 0;
-        /* width: 100%;
-        height: auto; */
         text-align: center;
     }
     .mainImg{
@@ -315,7 +377,7 @@ color: #f00 ;
         text-align: center;
     }    
     .wrapperGrid {
-        display: block;
+        display: inline-block;
     }
     #calendar {
         margin: 0 auto;
@@ -333,36 +395,48 @@ color: #f00 ;
         
     }
 
-    .SNScard {
-        margin: 0 auto;
-        margin: 5px auto 30px auto;
-        width: 90%;
-        height: 80px;
-        border: solid 1px;
-    }
-
-    .snsBtn{
-        margin: 0 auto;
-        margin-left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    .snsBtn img{
-        margin-top: 10px;
-        float: left;
-        border-radius: 30px;
-        height: 60px;
-        width: 60px;
-    }
-    .SNSText {
-        float: left;     
-        margin-top: 25px;
-        text-align: center;
-        /* vertical-align: middle; */
-    }
     #titletwitter{
-        padding: 0;
+        padding: 0 2px;
+        display:inline-block;
+        vertical-align: middle;
+    }
+
+    #modal-content{
+        width: 75% ;
+        margin: 0 ;
+        padding: 5px 5px ;
+        border: 2px solid #aaa ;
+        background: #ffdbff;
+        position: fixed ;
+        display: none ;
+        z-index: 3 ;
+    }
+    #modal-content2{
+        width: 75% ;
+        margin: 0 ;
+        padding: 5px 10px ;
+        border: 2px solid #aaa ;
+        background: #ffdbff;
+        position: fixed ;
+        display: none ;
+        z-index: 3 ;
+    }
+    #modal-content-innar, #modal-content-innar2{
+        margin:0 auto;
+        width: 100%;
+    }
+
+    .snsBtn {
+        width: auto;
+        height: auto;
+    }
+
+    .SNScard {
+        width: auto;
+        height: auto;
+    }
+
+    .iconContainer {
+        display: flex;
     }
 }
