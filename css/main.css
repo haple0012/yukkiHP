@@ -359,7 +359,7 @@ color: #f00 ;
 }
 
 /*スマホ画面の設定↓*/
-@media screen and (max-width: 750px){
+@media screen and (max-width: 800px){
     html, body{
         margin: 0;
         padding: 0;
