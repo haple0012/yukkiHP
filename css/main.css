@@ -352,7 +352,7 @@ color: #f00 ;
 }
 
 /*スマホ画面の設定↓*/
-@media screen and (max-width: 800px){
+@media screen and (max-width: 750px){
     .main{
         width: 100%;
         height: auto;
