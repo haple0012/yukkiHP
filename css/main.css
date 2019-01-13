@@ -361,8 +361,8 @@ color: #f00 ;
         text-align: center;
     }
     .mainImg{
-        /* width: 90%;
-        height: auto; */
+        width: 90%;
+        height: auto; 
         text-align: center;
     }    
     .wrapperGrid {
@@ -371,12 +371,12 @@ color: #f00 ;
     #calendar {
         margin: 0 auto;
         margin-top: 10px; 
-        width: 90%;
+        width: 80%;
     }
     #twitter {
         margin: 0 auto;
         margin-top: 10px;
-        width: 90%; 
+        width: 80%; 
     }
     #twitter-widget-0{
         width: 90% !important;
