@@ -111,7 +111,6 @@ html, body{
 #calendar {
     text-align: center;
     grid-column: 1/6;
-    width:calc(100vw - 20px);
 }
 
 #calendar iframe {
@@ -384,7 +383,7 @@ color: #f00 ;
         height: 500px !important;
         
     }
-
+    
     #twitter iframe .twitter-timeline-rendered{
         width: 490px !important;
     }
@@ -393,7 +392,6 @@ color: #f00 ;
         width: 450px !important;
         margin:0 auto;
     }
-
     #titletwitter{
         padding: 0 2px;
         display:inline-block;
@@ -439,7 +437,6 @@ color: #f00 ;
         display: flex;
     }
 }
-
     
     .timeline-Widget {
     max-width: 300px!important;
