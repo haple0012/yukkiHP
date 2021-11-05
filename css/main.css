@@ -30,6 +30,7 @@ html, body{
     z-index: -1;
 }
 
+
 #titleStyle {
     padding: 10px;
     width: 100%;
@@ -208,7 +209,7 @@ width:100%;
     height: 100px;
     grid-column: 5/6;
 }
-#modal-content,#modal-content2{
+#modal-content,#modal-content2,#modal-content3{
 	width:50%;
 	margin:1.5em auto 0;
 	padding:10px 20px;
@@ -233,7 +234,7 @@ width:100%;
     padding: 0 5%;
 }
 
-.modal-p, .modal-p2{
+.modal-p, .modal-p2, .modal-p3{
 	margin-top:1em;
 }
 
@@ -252,7 +253,7 @@ width:100%;
 }
 
 /* ここまでデモページ用のコード */
-#modal-content{
+#modal-content,#modal-content2,#modal-content3{
     width: 50% ;
     margin: 0 ;
     padding: 10px 20px ;
@@ -262,21 +263,11 @@ width:100%;
     display: none ;
     z-index: 3 ;
 }
-#modal-content2{
-    width: 70% ;
-    margin: 0 ;
-    padding: 10px 20px ;
-    border: 2px solid #aaa ;
-    background: #ffdbff;
-    position: fixed ;
-    display: none ;
-    z-index: 3 ;
-    }
-#modal-content-innar, #modal-content-innar2{
+#modal-content-innar, #modal-content-innar2, #modal-content-innar3{
 margin:0 auto;
 width:80%;
 }
-#modal-overlay, #modal-overlay2 {
+#modal-overlay, #modal-overlay2 , #modal-overlay3 {
 z-index: 1 ;
 display: none ;
 position: fixed ;
@@ -302,7 +293,7 @@ color: #f00 ;
     } #side-profile dl {
     margin-bottom: 10px;
 }
-#modal-close, #modal-close2{
+#modal-close, #modal-close2, #modal-close3{
     margin: 0 auto;
     margin-top: 15px; 
     width: 30px;
@@ -322,6 +313,9 @@ color: #f00 ;
     height: 18px;
     font-size: 10px;
     text-align: center;
+}
+th, td {
+    border-bottom:solid 1px silver;
 }
 
 .profile {
@@ -398,7 +392,7 @@ color: #f00 ;
         vertical-align: middle;
     }
 
-    #modal-content{
+    #modal-content,#modal-content3{
         width: 75% ;
         margin: 0 ;
         padding: 5px 5px ;
@@ -418,7 +412,7 @@ color: #f00 ;
         display: none ;
         z-index: 3 ;
     }
-    #modal-content-innar, #modal-content-innar2{
+    #modal-content-innar, #modal-content-innar2, #modal-content-innar3{
         margin:0 auto;
         width: 100%;
     }
